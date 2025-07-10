@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Akary ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#111, #333);
+      color: white;
+      font-family: 'Shadows Into Light', cursive;
+      background-image: url('https://i.pinimg.com/originals/fd/88/7b/fd887b58c1e73ec487ab672a1e0fc94e.gif');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .carta {
+      max-width: 800px;
+      margin: 50px auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .bloque {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .bloque.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bloque img {
+      width: 200px;
+      border-radius: 15px;
+      margin-right: 20px;
+      box-shadow: 0 0 10px white;
+    }
+
+    .bloque p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      border: none;
+      margin-top: 30px;
+      box-shadow: 0 0 15px #fff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .bloque {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .bloque img {
+        margin: 0 0 15px 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="carta">
+  <h1>Para Akary 💌</h1>
+
+  <div class="bloque">
+    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWN1ZDZzdW9yOGJrbjQ3dHk0cmZjN2t1Mzl6NnV3MGlmZjdydThiMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2mHN81QPRKCpMAOKXw/giphy.gif" alt="Punpun gif">
+    <h2>
+      No sé ni cómo empezar... pero sabes que esta carta es de corazón. Tú más que nadie me conoces,
+      sabes cuándo no estoy bien, incluso si trato de ocultarlo. A veces siento que me perdí entre lo que fui y lo que esperaban que fuera.
+    </h2>
+  </div>
+
+  <div class="bloque">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmo1eTRudHI3OXpnd21pcDBvajlqdHcwYXcyYWNmNzlpOHNtcDJqciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IcJ6n6VJNjRNS/giphy.gif" alt="GIF emocional">
+    <h2>
+      Gracias por existir. Gracias por quedarte. No sé si te merezco, pero cada vez que hablas conmigo, me haces sentir que no todo está perdido.
+      Como en esos animes que nos hacían llorar cuando el personaje solo quería ser feliz, yo también estoy intentando encontrar la luz.
+    </h2>
+  </div>
+
+  <div class="bloque">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTg0aDZnemI4cjM5dXN0aXAwcHkzNnp3MHZxdGd3YXM1czR1cHA5eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Uhdcr514UMfEFURZZi/giphy.gif" alt="gif bonito">
+    <h2>
+      Esta carta es un pedacito de mí, con todo lo que soy y todo lo que me falta. Eres una persona especial, y quería que lo supieras con algo más que palabras.
+    </h2>
+  </div>
+
+  <iframe src="Los Tigres Del Norte Qué Tal Si Eres Tú (Video Oficial).mp4" allowfullscreen></iframe>
+  <p style="text-align:center; margin-top:10px;">Una canción que me recuerda a ti 🌙</p>
+</div>
+
+<script>
+  // Animación al hacer scroll
+  const bloques = document.querySelectorAll('.bloque');
+
+  const mostrarBloques = () => {
+    bloques.forEach(bloque => {
+      const rect = bloque.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 300) {
+        bloque.classList.add('visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', mostrarBloques);
+  window.addEventListener('load', mostrarBloques);
+</script>
+
+</body>
+</html>
